@@ -1,10 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import AdvanceCollection from './advance/advance_collection';
+// import AdvanceCollection from './advance/advance_collection';
+import ExtraBed from './extraBed/extra_bed';
 function App() {
   return (
     <div className="App">
-      <AdvanceCollection />
+      {/* <AdvanceCollection /> */}
+      <ExtraBed />
 
     </div>
   );
