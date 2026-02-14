@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 
-const AdvanceCollection = () => {
+const ExtraBed = () => {
     // State for form fields
     const [formData, setFormData] = useState({
         projectName: "",
@@ -323,4 +323,4 @@ const AdvanceCollection = () => {
     );
 };
 
-export default AdvanceCollection;
+export default ExtraBed;
