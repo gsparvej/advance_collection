@@ -13,17 +13,14 @@ const BedChange = () => {
         prevChangeDate: "",
         drName: "",
         admissionCharge: "",
-        roomNo: "",
-        bedCharge: "",
+        roomNoPrev: "",
+        roomNoCurrent: "",
+        bedChargePrev: "",
+        bedChargeCurrent: "",
         totalCharge: "",
-
-
-
-
-
-
-
-
+        totalDays: "",
+        floorNo: "",
+        changeTime: "",
         remarks: ""
     });
     const [focusedInput, setFocusedInput] = React.useState(null);
@@ -82,8 +79,9 @@ const BedChange = () => {
                             <label style={{ minWidth: "100px", fontWeight: "bold", fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Admission Date</label>
                             <input
                                 type="text"
-                                name="receiptNo"
-                                value={formData.receiptNo}
+                                name="admissionDate"
+                                value={formData.admissionDate}
+                                onChange={handleChange}
                                 style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", cursor: "not-allowed", height: "22px" }}
                                 readOnly
                             />
@@ -100,16 +98,19 @@ const BedChange = () => {
                                 name="patientId"
                                 value={formData.patientId}
                                 onChange={handleChange}
-                                style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", cursor: "not-allowed", height: "22px" }}
-                                readOnly
+                                onFocus={() => setFocusedInput("patientId")}
+                                onBlur={() => setFocusedInput("")}
+                                style={{ flex: 1, padding: "4px 8px", border: "2px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: focusedInput === "patientId" ? "yellow" : "white", height: "22px", outline: "none" }}
+                                required
                             />
                         </div>
                         <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
                             <label style={{ minWidth: "100px", fontWeight: "bold", fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Prev. Change Date</label>
                             <input
                                 type="text"
-                                name="receiptNo"
-                                value={formData.receiptNo}
+                                name="prevChangeDate"
+                                value={formData.prevChangeDate}
+                                onChange={handleChange}
                                 style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", cursor: "not-allowed", height: "22px" }}
                                 readOnly
                             />
@@ -121,8 +122,8 @@ const BedChange = () => {
                             <label style={{ minWidth: "100px", fontWeight: "bold", fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Patient Name </label>
                             <input
                                 type="text"
-                                name="patientId"
-                                value={formData.patientId}
+                                name="patientName"
+                                value={formData.patientName}
                                 onChange={handleChange}
                                 style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", cursor: "not-allowed", height: "22px" }}
                                 readOnly
@@ -132,8 +133,9 @@ const BedChange = () => {
                             <label style={{ minWidth: "100px", fontWeight: "bold", fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Current Change Date</label>
                             <input
                                 type="text"
-                                name="receiptNo"
-                                value={formData.receiptNo}
+                                name="currentChangeDate"
+                                value={formData.currentChangeDate}
+                                onChange={handleChange}
                                 style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", cursor: "not-allowed", height: "22px" }}
                                 readOnly
                             />
@@ -156,8 +158,9 @@ const BedChange = () => {
                             <label style={{ minWidth: "100px", fontWeight: "bold", fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Admission Charge</label>
                             <input
                                 type="text"
-                                name="receiptNo"
-                                value={formData.receiptNo}
+                                name="admissionCharge"
+                                value={formData.admissionCharge}
+                                onChange={handleChange}
                                 style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", cursor: "not-allowed", height: "22px" }}
                                 readOnly
                             />
@@ -188,12 +191,10 @@ const BedChange = () => {
                                     </label>
                                     <input
                                         type="text"
-                                        name="roomNumber"
-                                        value={formData.roomNumber}
-                                        onChange={handleChange}
-                                        onFocus={() => setFocusedInput("roomNumber")}
-                                        onBlur={() => setFocusedInput("")}
-                                        style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: focusedInput === "roomNumber" ? "yellow" : "white", height: "22px", outline: "none" }}
+                                        name="roomNoPrev"
+                                        value={formData.roomNoPrev}
+                                        style={{ flex: 1, padding: "4px 8px", backgroundColor: "#e9ecef", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", height: "22px", cursor: "not-allowed", outline: "none" }}
+                                        readOnly
                                     />
                                 </div>
 
@@ -201,10 +202,9 @@ const BedChange = () => {
                                     <label style={{ minWidth: "100px", fontWeight: "bold", fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Bed Charge</label>
                                     <input
                                         type="text"
-                                        name="bedCharge"
-                                        value={formData.bedCharge}
-                                        onChange={handleChange}
-                                        style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", cursor: "not-allowed", height: "22px" }}
+                                        name="bedChargePrev"
+                                        value={formData.bedChargePrev}
+                                        style={{ flex: 1, padding: "4px 8px", backgroundColor: "#e9ecef", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", height: "22px", cursor: "not-allowed", outline: "none" }}
                                         readOnly
                                     />
                                 </div>
@@ -219,8 +219,7 @@ const BedChange = () => {
                                         type="text"
                                         name="totalDays"
                                         value={formData.totalDays}
-                                        onChange={handleChange}
-                                        style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", cursor: "not-allowed", height: "22px" }}
+                                        style={{ flex: 1, padding: "4px 8px", backgroundColor: "#e9ecef", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", height: "22px", cursor: "not-allowed", outline: "none" }}
                                         readOnly
                                     />
                                 </div>
@@ -230,8 +229,7 @@ const BedChange = () => {
                                     <input
                                         name="totalCharge"
                                         value={formData.totalCharge}
-                                        onChange={handleChange}
-                                        style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", cursor: "not-allowed", height: "22px" }}
+                                        style={{ flex: 1, padding: "4px 8px", backgroundColor: "#e9ecef", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", height: "22px", cursor: "not-allowed", outline: "none" }}
                                         readOnly
                                     />
 
@@ -255,23 +253,22 @@ const BedChange = () => {
                                     <label style={{ minWidth: "100px", fontWeight: "bold", fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}> Room Number </label>
                                     <input
                                         type="text"
-                                        name="cashAmount"
-                                        value={formData.cashAmount}
+                                        name="roomNoCurrent"
+                                        value={formData.roomNoCurrent}
                                         onChange={handleChange}
-                                        onFocus={() => setFocusedInput("cashAmount")}
+                                        onFocus={() => setFocusedInput("roomNoCurrent")}
                                         onBlur={() => setFocusedInput("")}
-                                        style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: focusedInput === "cashAmount" ? "yellow" : "white", height: "22px", outline: "none" }}
+                                        style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: focusedInput === "roomNoCurrent" ? "yellow" : "white", height: "22px", outline: "none" }}
                                     />
                                 </div>
                                 <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
                                     <label style={{ minWidth: "100px", fontWeight: "bold", fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}> Floor Number</label>
                                     <input
-                                        type="number"
-                                        name="totalAdvance"
-                                        min="0"
-                                        step="0.01"
-                                        value={formData.totalAdvance}
-                                        style={{ flex: 1, padding: "4px 8px", border: "1px solid #ccc", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", cursor: "not-allowed", height: "22px" }}
+                                        type="text"
+                                        name="floorNo"
+                                        value={formData.floorNo}
+                                        onChange={handleChange}
+                                        style={{ flex: 1, padding: "4px 8px", backgroundColor: "#e9ecef", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", height: "22px", cursor: "not-allowed", outline: "none" }}
                                         readOnly
                                     />
                                 </div>
@@ -284,25 +281,24 @@ const BedChange = () => {
                                     <label style={{ minWidth: "100px", fontWeight: "bold", fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}> Change Time</label>
                                     <input
                                         type="text"
-                                        name="cardAmount"
-                                        value={formData.cardAmount}
+                                        name="changeTime"
+                                        value={formData.changeTime}
                                         onChange={handleChange}
-                                        onFocus={() => setFocusedInput("cardAmount")}
+                                        onFocus={() => setFocusedInput("changeTime")}
                                         onBlur={() => setFocusedInput("")}
-                                        style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: focusedInput === "cardAmount" ? "yellow" : "white", height: "22px", outline: "none" }}
+                                        style={{ flex: 1, padding: "4px 8px", backgroundColor: "#e9ecef", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", height: "22px", cursor: "not-allowed", outline: "none" }}
                                     />
                                 </div>
                                 <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
                                     <label style={{ minWidth: "100px", fontWeight: "bold", fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}> Bed Charge </label>
                                     <input
                                         type="text"
-                                        name="cardNo"
-                                        value={formData.cardNo}
+                                        name="bedChargeCurrent"
+                                        value={formData.bedChargeCurrent}
                                         onChange={handleChange}
-                                        onFocus={() => setFocusedInput("cardNo")}
-                                        onBlur={() => setFocusedInput("")}
-                                        style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: focusedInput === "cardNo" ? "yellow" : "white", height: "22px", outline: "none" }}
-                                    />
+
+                                        style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", cursor: "not-allowed", height: "22px", outline: "none" }}
+                                        readOnly />
                                 </div>
 
                             </div>
@@ -312,28 +308,27 @@ const BedChange = () => {
 
 
                             <div style={{ display: "flex", marginBottom: "6px", gap: "8px" }}>
-                                <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
+                                <div style={{ display: "flex", alignItems: "center" }}>
                                     <label style={{ minWidth: "100px", fontWeight: "bold", fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}> Dr Name </label>
                                     <input
                                         type="text"
-                                        name="chequeAmount"
-                                        value={formData.chequeAmount}
+                                        name="drName"
+                                        value={formData.drName}
                                         onChange={handleChange}
-                                        onFocus={() => setFocusedInput("chequeAmount")}
+                                        onFocus={() => setFocusedInput("drName")}
                                         onBlur={() => setFocusedInput("")}
-                                        style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: focusedInput === "chequeAmount" ? "yellow" : "white", height: "22px", outline: "none" }}
+                                        style={{ flex: 1, padding: "4px 8px", border: "2px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: focusedInput === "drName" ? "yellow" : "white", height: "22px", outline: "none", width: "30%" }}
                                     />
                                 </div>
                                 <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
 
                                     <input
                                         type="text"
-                                        name="chequeNo"
-                                        value={formData.chequeNo}
+                                        name="drName"
+                                        value={formData.drName}
                                         onChange={handleChange}
-                                        onFocus={() => setFocusedInput("chequeNo")}
-                                        onBlur={() => setFocusedInput("")}
-                                        style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: focusedInput === "chequeNo" ? "yellow" : "white", height: "22px", outline: "none" }}
+
+                                        style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", height: "22px", outline: "none" }}
                                     />
                                 </div>
                             </div>
@@ -357,7 +352,7 @@ const BedChange = () => {
                                 border: "1px solid #ccc",
                                 borderRadius: "3px",
                                 fontSize: "12px",
-                                minHeight: "50px",
+                                minHeight: "25px",
                                 resize: "vertical",
                                 fontFamily: "inherit",
                                 backgroundColor: focusedInput === "remarks" ? "yellow" : "white", // ✅ add this
