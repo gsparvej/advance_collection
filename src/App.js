@@ -4,7 +4,8 @@ import './App.css';
 // import AdvanceCollection from './advance/advance_collection';
 // import ExtraBed from './extraBed/extra_bed';
 // import BedChange from './bedChange/bed_change';
-import DoctorVisitEntry from './doctorVisit/doctor_visit';
+// import DoctorVisitEntry from './doctorVisit/doctor_visit';
+import BillModify from './billModify/bill_modify';
 function App() {
   return (
     <div className="App">
@@ -12,8 +13,8 @@ function App() {
       {/* <ExtraBed /> */}
       {/* <BedChange /> */}
       {/* <ProcedureEntry /> */}
-      <DoctorVisitEntry />
-
+      {/* <DoctorVisitEntry /> */}
+      <BillModify />
     </div>
   );
 }

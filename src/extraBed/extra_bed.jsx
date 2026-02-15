@@ -59,15 +59,6 @@ const ExtraBed = () => {
                 <h2 style={{ textAlign: "center", fontSize: "16px", fontWeight: "bold", marginBottom: "12px", color: "#333", borderBottom: "1px solid rgba(0, 0, 0, 0.84)", paddingBottom: "6px", paddingTop: "1px" }}> Patient Extra Bed  </h2>
 
                 <form onSubmit={handleSubmit}>
-                    {/* Row 1 */}
-
-
-                    {/* Row 2 */}
-
-
-
-
-
                     <div style={{ outline: "1px solid #160f0fff", padding: "8px", borderRadius: "3px", marginBottom: "12px" }}>
 
 
