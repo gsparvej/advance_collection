@@ -489,7 +489,9 @@ const PatientRelease = () => {
                                     name="patientStatus"
                                     value={formData.patientStatus}
                                     onChange={handleChange}
-                                    style={inputStyle}
+                                    onFocus={() => setFocusedInput("patientStatus")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "patientStatus" ? "#ffffcc" : "white" }}
                                 >
                                     <option value="">---Select---</option>
                                     <option value="1">Discharge</option>
@@ -509,7 +511,9 @@ const PatientRelease = () => {
                                     name="printType"
                                     value={formData.printType}
                                     onChange={handleChange}
-                                    style={inputStyle}
+                                    onFocus={() => setFocusedInput("printType")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "printType" ? "#ffffcc" : "white" }}
                                 >
                                     <option value="">---Select---</option>
                                 </select>
@@ -646,8 +650,10 @@ const PatientRelease = () => {
                                     name="cashAmt"
                                     value={formData.cashAmt}
                                     onChange={handleChange}
+                                    onFocus={() => setFocusedInput("cashAmt")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "cashAmt" ? "#ffffcc" : "white" }}
                                     placeholder="0.00"
-                                    style={inputStyle}
                                 />
                             </div>
                             <div style={colStyle("16.66%")}>
@@ -689,8 +695,10 @@ const PatientRelease = () => {
                                     name="cardAmt"
                                     value={formData.cardAmt}
                                     onChange={handleChange}
+                                    onFocus={() => setFocusedInput("cardAmt")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "cardAmt" ? "#ffffcc" : "white" }}
                                     placeholder="0.00"
-                                    style={inputStyle}
                                 />
                             </div>
                             <div style={colStyle("16.66%")}>
@@ -702,8 +710,10 @@ const PatientRelease = () => {
                                     name="cardNo"
                                     value={formData.cardNo}
                                     onChange={handleChange}
+                                    onFocus={() => setFocusedInput("cardNo")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "cardNo" ? "#ffffcc" : "white" }}
                                     placeholder="Card No"
-                                    style={inputStyle}
                                 />
                             </div>
                             <div style={colStyle("16.66%")}>
@@ -714,7 +724,9 @@ const PatientRelease = () => {
                                     name="cardBank"
                                     value={formData.cardBank}
                                     onChange={handleChange}
-                                    style={inputStyle}
+                                    onFocus={() => setFocusedInput("cardBank")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "cardBank" ? "#ffffcc" : "white" }}
                                 >
                                     <option value="">---Select---</option>
                                     <option value="31">AB BANK</option>
@@ -739,8 +751,10 @@ const PatientRelease = () => {
                                     name="chequeAmt"
                                     value={formData.chequeAmt}
                                     onChange={handleChange}
+                                    onFocus={() => setFocusedInput("chequeAmt")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "chequeAmt" ? "#ffffcc" : "white" }}
                                     placeholder="0.00"
-                                    style={inputStyle}
                                 />
                             </div>
                             <div style={colStyle("16.66%")}>
@@ -752,8 +766,10 @@ const PatientRelease = () => {
                                     name="chequeNo"
                                     value={formData.chequeNo}
                                     onChange={handleChange}
+                                    onFocus={() => setFocusedInput("chequeNo")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "chequeNo" ? "#ffffcc" : "white" }}
                                     placeholder="Cheque No"
-                                    style={inputStyle}
                                 />
                             </div>
                             <div style={colStyle("16.66%")}>
@@ -764,7 +780,9 @@ const PatientRelease = () => {
                                     name="chequeBank"
                                     value={formData.chequeBank}
                                     onChange={handleChange}
-                                    style={inputStyle}
+                                    onFocus={() => setFocusedInput("chequeBank")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "chequeBank" ? "#ffffcc" : "white" }}
                                 >
                                     <option value="">---Select---</option>
                                     {/* Banks options usually same as CardBank */}
@@ -799,7 +817,9 @@ const PatientRelease = () => {
                                     name="remarks"
                                     value={formData.remarks}
                                     onChange={handleChange}
-                                    style={inputStyle}
+                                    onFocus={() => setFocusedInput("remarks")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "remarks" ? "#ffffcc" : "white" }}
                                 />
                             </div>
                         </div>
