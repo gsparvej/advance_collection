@@ -69,7 +69,7 @@ const BillModify = () => {
                 <form onSubmit={handleSubmit}>
                     <div style={{ borderTop: "1px solid #ccc", marginTop: "2px", borderRadius: "2px", marginBottom: "12px" }}>
                         <div style={{ display: "flex", marginBottom: "6px", marginTop: "10px", gap: "8px" }}>
-                            <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
+                            <div style={{ display: "flex", alignItems: "center", width: "20%" }}>
                                 <label style={{ minWidth: "100px", fontWeight: 900, fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Patient Id</label>
                                 <input
                                     type="text"
@@ -82,7 +82,7 @@ const BillModify = () => {
                                     readOnly
                                 />
                             </div>
-                            <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
+                            <div style={{ display: "flex", alignItems: "center", width: "30%" }}>
                                 <label style={{ minWidth: "100px", fontWeight: 900, fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Adm Date</label>
                                 <input
                                     type="text"
@@ -92,7 +92,7 @@ const BillModify = () => {
                                     readOnly
                                 />
                             </div>
-                            <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
+                            <div style={{ display: "flex", alignItems: "center", width: "24%" }}>
                                 <label style={{ minWidth: "100px", fontWeight: 900, fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Admission Time</label>
                                 <input
                                     type="time"
@@ -102,7 +102,7 @@ const BillModify = () => {
                                     readOnly
                                 />
                             </div>
-                            <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
+                            <div style={{ display: "flex", alignItems: "center", width: "26%" }}>
                                 <label style={{ minWidth: "100px", fontWeight: 900, fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Days</label>
                                 <input
                                     type="text"
