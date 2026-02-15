@@ -67,44 +67,6 @@ const BillModify = () => {
                 <h2 style={{ textAlign: "center", fontSize: "16px", fontWeight: "bold", marginBottom: "12px", color: "#333", borderBottom: "1px solid rgba(0, 0, 0, 0.84)", paddingBottom: "6px", paddingTop: "1px" }}> Bill Modify  </h2>
 
                 <form onSubmit={handleSubmit}>
-
-
-                    {/* <div style={{ display: "flex", marginBottom: "10px", gap: "8px" }}>
-                        <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
-                            <label style={{ minWidth: "100px", fontWeight: 900, fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Project Name</label>
-                            <input
-                                type="text"
-                                name="projectName"
-                                value={formData.projectName}
-                                onChange={handleChange}
-                                style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", cursor: "not-allowed", height: "22px" }}
-                                readOnly
-                            />
-                        </div>
-                        <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
-                            <label style={{ minWidth: "100px", fontWeight: 900, fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Slip No</label>
-                            <input
-                                type="text"
-                                name="slipNo"
-                                value={formData.slipNo}
-                                style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", cursor: "not-allowed", height: "22px" }}
-                                readOnly
-                            />
-                        </div>
-                        <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
-                            <label style={{ minWidth: "100px", fontWeight: 900, fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Slip Date</label>
-                            <input
-                                type="date"
-                                name="slipDate"
-                                value={formData.slipDate}
-                                onChange={handleChange}
-                                style={{ flex: 1, padding: "4px 8px", border: "1px solid #ccc", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", cursor: "not-allowed", height: "22px" }}
-                                readOnly
-                            />
-                        </div>
-                    </div> */}
-
-
                     <div style={{ borderTop: "1px solid #ccc", marginTop: "2px", borderRadius: "2px", marginBottom: "12px" }}>
                         <div style={{ display: "flex", marginBottom: "6px", marginTop: "10px", gap: "8px" }}>
                             <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
@@ -193,7 +155,7 @@ const BillModify = () => {
                             </div>
                         </div>
                         <div style={{ display: "flex", marginBottom: "6px", gap: "8px" }}>
-                            <div style={{ display: "flex", alignItems: "center", width: "47%" }}>
+                            <div style={{ flex: 2, display: "flex", alignItems: "center" }}>
                                 <label style={{ minWidth: "100px", fontWeight: 900, fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Address</label>
                                 <input
                                     type="text"
@@ -204,18 +166,20 @@ const BillModify = () => {
                                     readOnly
                                 />
                             </div>
-                            <div style={{ display: "flex", alignItems: "center", width: "53%" }}>
+                            <div style={{ display: "flex", alignItems: "center", width: "26%" }}>
                                 <label style={{ minWidth: "100px", fontWeight: 900, fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Bed No</label>
+
                                 <input
-                                    type="text"
                                     name="bedNo"
                                     value={formData.bedNo}
                                     onChange={handleChange}
                                     style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", cursor: "not-allowed", height: "22px" }}
                                     readOnly
                                 />
+
+
                             </div>
-                            <div style={{ display: "flex", alignItems: "center", width: "53%" }}>
+                            <div style={{ display: "flex", alignItems: "center", width: "26%" }}>
                                 <label style={{ minWidth: "100px", fontWeight: 900, fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Department</label>
                                 <input
                                     type="text"
@@ -227,6 +191,8 @@ const BillModify = () => {
                                 />
                             </div>
                         </div>
+
+
 
 
                         <div style={{ display: "flex", marginBottom: "6px", gap: "8px" }}>
@@ -376,32 +342,33 @@ const BillModify = () => {
 
                         <div style={{ display: "flex", marginBottom: "6px", gap: "8px" }}>
                             <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
-                                <label style={{ minWidth: "100px", fontSize: "12px", color: "#333", fontWeight: "bold", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Project Name</label>
+                                <label style={{ minWidth: "100px", fontSize: "12px", color: "#333", fontWeight: "bold", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}> Total Amount</label>
                                 <input
                                     type="text"
-                                    name="projectName"
-                                    value={formData.projectName}
+                                    name="totalAmount"
+                                    value={formData.totalAmount}
                                     onChange={handleChange}
                                     style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", cursor: "not-allowed", height: "18px" }}
                                     readOnly
                                 />
                             </div>
                             <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
-                                <label style={{ minWidth: "100px", fontSize: "12px", color: "#333", fontWeight: "bold", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Slip Number </label>
+                                <label style={{ minWidth: "100px", fontSize: "12px", color: "#333", fontWeight: "bold", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Less</label>
                                 <input
                                     type="text"
-                                    name="slipNumber"
-                                    value={formData.slipNumber}
+                                    name="less"
+                                    value={formData.less}
+                                    onChange={handleChange}
                                     style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", cursor: "not-allowed", height: "18px" }}
                                     readOnly
                                 />
                             </div>
                             <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
-                                <label style={{ minWidth: "100px", fontSize: "12px", color: "#333", fontWeight: "bold", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Slip Date</label>
+                                <label style={{ minWidth: "100px", fontSize: "12px", color: "#333", fontWeight: "bold", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Service Charge </label>
                                 <input
-                                    type="date"
-                                    name="slipDate"
-                                    value={formData.slipDate}
+                                    type="text"
+                                    name="chargeAmount"
+                                    value={formData.chargeAmount}
                                     onChange={handleChange}
                                     style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", height: "18px" }}
                                     readOnly
@@ -410,22 +377,23 @@ const BillModify = () => {
                         </div>
                         <div style={{ display: "flex", marginBottom: "6px", gap: "8px" }}>
                             <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
-                                <label style={{ minWidth: "100px", fontSize: "12px", color: "#333", fontWeight: "bold", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Project Name</label>
+                                <label style={{ minWidth: "100px", fontSize: "12px", color: "#333", fontWeight: "bold", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Net Amount </label>
                                 <input
                                     type="text"
-                                    name="projectName"
-                                    value={formData.projectName}
+                                    name="netAmount"
+                                    value={formData.netAmount}
                                     onChange={handleChange}
                                     style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", cursor: "not-allowed", height: "18px" }}
                                     readOnly
                                 />
                             </div>
                             <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
-                                <label style={{ minWidth: "100px", fontSize: "12px", color: "#333", fontWeight: "bold", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Slip Number </label>
+                                <label style={{ minWidth: "100px", fontSize: "12px", color: "#333", fontWeight: "bold", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}> Dr Amount </label>
                                 <input
                                     type="text"
-                                    name="slipNumber"
-                                    value={formData.slipNumber}
+                                    name="drAmount"
+                                    value={formData.drAmount}
+                                    onChange={handleChange}
                                     style={{ flex: 1, padding: "4px 8px", border: "1px solid #769ce9ff", borderRadius: "3px", fontSize: "12px", backgroundColor: "#e9ecef", cursor: "not-allowed", height: "18px" }}
                                     readOnly
                                 />
@@ -449,12 +417,12 @@ const BillModify = () => {
 
                     <div style={{ display: "flex", gap: "8px", justifyContent: "center", marginTop: "15px" }}>
                         <div style={{ flex: 2, display: "flex", alignItems: "center", marginTop: "8px" }}>
-                            <label style={{ minWidth: "100px", fontWeight: 900, fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Remarks</label>
+                            <label style={{ minWidth: "100px", fontWeight: 900, fontSize: "12px", color: "#333", textAlign: "right", paddingRight: "8px", whiteSpace: "nowrap" }}>Notes</label>
                             <input
-                                name="remarks"
-                                value={formData.remarks}
+                                name="note"
+                                value={formData.note}
                                 onChange={handleChange}
-                                onFocus={() => setFocusedInput("remarks")}
+                                onFocus={() => setFocusedInput("note")}
                                 onBlur={() => setFocusedInput("")}
                                 style={{
                                     flex: 1,
@@ -464,7 +432,7 @@ const BillModify = () => {
                                     fontSize: "12px",
                                     height: "22px",
                                     fontFamily: "inherit",
-                                    backgroundColor: focusedInput === "remarks" ? "yellow" : "white",
+                                    backgroundColor: focusedInput === "note" ? "yellow" : "white",
                                     outline: "none"
                                 }}
                             />
