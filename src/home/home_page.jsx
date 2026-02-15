@@ -38,6 +38,12 @@ const HomePage = () => {
                                 <Link to="/bill-modify">Bill Modify</Link>
                             </td>
                         </div>
+                        <div style={{ display: "flex", gap: "10px" }}>
+                            <td>
+                                <div>Patient Release</div>
+                                <Link to="/patient-release">Patient Release</Link>
+                            </td>
+                        </div>
                     </tr>
                 </tbody>
             </table>

@@ -7,6 +7,7 @@ import BedChange from './bedChange/bed_change';
 import DoctorVisitEntry from './doctorVisit/doctor_visit';
 import BillModify from './billModify/bill_modify';
 import HomePage from './home/home_page';
+import PatientRelease from './patientRelease/patient_release';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/procedure-entry" element={<ProcedureEntry />} />
           <Route path="/doctor-visit-entry" element={<DoctorVisitEntry />} />
           <Route path="/bill-modify" element={<BillModify />} />
+          <Route path="/patient-release" element={<PatientRelease />} />
         </Routes>
       </Router>
     </div>
