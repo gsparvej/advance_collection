@@ -151,7 +151,10 @@ const BirthCertificate = () => {
                                 <label style={labelStyle}>Certificate Date</label>
                             </div>
                             <div style={colStyle("25%")}>
-                                <input type="date" name="certificateDate" value={formData.certificateDate} onChange={handleChange} style={inputStyle} />
+                                <input
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "certificateDate" ? "#ffffcc" : "white" }}
+                                    onFocus={() => setFocusedInput("certificateDate")}
+                                    onBlur={() => setFocusedInput(null)} type="date" name="certificateDate" value={formData.certificateDate} onChange={handleChange} />
                             </div>
                         </div>
 
@@ -183,7 +186,9 @@ const BirthCertificate = () => {
                                     name="babyName"
                                     value={formData.babyName}
                                     onChange={handleChange}
-                                    style={inputStyle}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "babyName" ? "#ffffcc" : "white" }}
+                                    onFocus={() => setFocusedInput("babyName")}
+                                    onBlur={() => setFocusedInput(null)}
                                 />
                             </div>
                         </div>
@@ -200,7 +205,10 @@ const BirthCertificate = () => {
                                 <label style={labelStyle}>Birth Date</label>
                             </div>
                             <div style={colStyle("25%")}>
-                                <input type="date" name="birthDate" value={formData.birthDate} onChange={handleChange} style={inputStyle} />
+                                <input
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "birthDate" ? "#ffffcc" : "white" }}
+                                    onFocus={() => setFocusedInput("birthDate")}
+                                    onBlur={() => setFocusedInput(null)} type="date" name="birthDate" value={formData.birthDate} onChange={handleChange} />
                             </div>
                         </div>
 
@@ -216,7 +224,10 @@ const BirthCertificate = () => {
                                 <label style={labelStyle}>Birth Time</label>
                             </div>
                             <div style={colStyle("25%")}>
-                                <input type="text" name="birthTime" value={formData.birthTime} onChange={handleChange} placeholder="X : 00 PM" style={inputStyle} />
+                                <input
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "birthTime" ? "#ffffcc" : "white" }}
+                                    onFocus={() => setFocusedInput("birthTime")}
+                                    onBlur={() => setFocusedInput(null)} type="text" name="birthTime" value={formData.birthTime} onChange={handleChange} placeholder="X : 00 PM" />
                             </div>
                         </div>
 
@@ -236,7 +247,9 @@ const BirthCertificate = () => {
                                     name="babySex"
                                     value={formData.babySex}
                                     onChange={handleChange}
-                                    style={inputStyle}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "babySex" ? "#ffffcc" : "white" }}
+                                    onFocus={() => setFocusedInput("babySex")}
+                                    onBlur={() => setFocusedInput(null)}
                                 >
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
@@ -251,19 +264,28 @@ const BirthCertificate = () => {
                                 <label style={labelStyle}>Fathers Name</label>
                             </div>
                             <div style={colStyle("25%")}>
-                                <input type="text" name="fatherName" value={formData.fatherName} onChange={handleChange} style={inputStyle} />
+                                <input
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "fatherName" ? "#ffffcc" : "white" }}
+                                    onFocus={() => setFocusedInput("fatherName")}
+                                    onBlur={() => setFocusedInput(null)} type="text" name="fatherName" value={formData.fatherName} onChange={handleChange} />
                             </div>
                             <div style={colStyle("16.66%")}>
                                 <label style={labelStyle}>Fathers Occupation</label>
                             </div>
                             <div style={colStyle("8.33%")}>
-                                <input type="text" name="fatherOccupation" value={formData.fatherOccupation} onChange={handleChange} style={inputStyle} />
+                                <input
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "fatherOccupation" ? "#ffffcc" : "white" }}
+                                    onFocus={() => setFocusedInput("fatherOccupation")}
+                                    onBlur={() => setFocusedInput(null)} type="text" name="fatherOccupation" value={formData.fatherOccupation} onChange={handleChange} />
                             </div>
                             <div style={colStyle("8.33%")}>
                                 <label style={labelStyle}>NID No</label>
                             </div>
                             <div style={colStyle("8.33%")}>
-                                <input type="text" name="fatherNID" value={formData.fatherNID} onChange={handleChange} style={inputStyle} />
+                                <input
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "fatherNID" ? "#ffffcc" : "white" }}
+                                    onFocus={() => setFocusedInput("fatherNID")}
+                                    onBlur={() => setFocusedInput(null)} type="text" name="fatherNID" value={formData.fatherNID} onChange={handleChange} />
                             </div>
                         </div>
 
@@ -273,19 +295,28 @@ const BirthCertificate = () => {
                                 <label style={labelStyle}>Mothers Name</label>
                             </div>
                             <div style={colStyle("25%")}>
-                                <input type="text" name="motherName" value={formData.motherName} onChange={handleChange} style={inputStyle} />
+                                <input
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "motherName" ? "#ffffcc" : "white" }}
+                                    onFocus={() => setFocusedInput("motherName")}
+                                    onBlur={() => setFocusedInput(null)} type="text" name="motherName" value={formData.motherName} onChange={handleChange} />
                             </div>
                             <div style={colStyle("16.66%")}>
                                 <label style={labelStyle}>Mothers Occupation</label>
                             </div>
                             <div style={colStyle("8.33%")}>
-                                <input type="text" name="motherOccupation" value={formData.motherOccupation} onChange={handleChange} style={inputStyle} />
+                                <input
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "motherOccupation" ? "#ffffcc" : "white" }}
+                                    onFocus={() => setFocusedInput("motherOccupation")}
+                                    onBlur={() => setFocusedInput(null)} type="text" name="motherOccupation" value={formData.motherOccupation} onChange={handleChange} />
                             </div>
                             <div style={colStyle("8.33%")}>
                                 <label style={labelStyle}>NID No</label>
                             </div>
                             <div style={colStyle("8.33%")}>
-                                <input type="text" name="motherNID" value={formData.motherNID} onChange={handleChange} style={inputStyle} />
+                                <input
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "motherNID" ? "#ffffcc" : "white" }}
+                                    onFocus={() => setFocusedInput("motherNID")}
+                                    onBlur={() => setFocusedInput(null)} type="text" name="motherNID" value={formData.motherNID} onChange={handleChange} />
                             </div>
                         </div>
 
@@ -295,7 +326,10 @@ const BirthCertificate = () => {
                                 <label style={labelStyle}>Present Address</label>
                             </div>
                             <div style={colStyle("25%")}>
-                                <input type="text" name="presentAddress" value={formData.presentAddress} onChange={handleChange} style={inputStyle} />
+                                <input
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "presentAddress" ? "#ffffcc" : "white" }}
+                                    onFocus={() => setFocusedInput("presentAddress")}
+                                    onBlur={() => setFocusedInput(null)} type="text" name="presentAddress" value={formData.presentAddress} onChange={handleChange} />
                             </div>
                             <div style={colStyle("16.66%")}>
                                 <label style={labelStyle}>Religion</label>
@@ -305,7 +339,9 @@ const BirthCertificate = () => {
                                     name="religion"
                                     value={formData.religion}
                                     onChange={handleChange}
-                                    style={inputStyle}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "religion" ? "#ffffcc" : "white" }}
+                                    onFocus={() => setFocusedInput("religion")}
+                                    onBlur={() => setFocusedInput(null)}
                                 >
                                     <option value="Islam">Islam</option>
                                     <option value="Hindu">Hindu</option>
@@ -322,13 +358,19 @@ const BirthCertificate = () => {
                                 <label style={labelStyle}>Permanent Address</label>
                             </div>
                             <div style={colStyle("25%")}>
-                                <input type="text" name="permanentAddress" value={formData.permanentAddress} onChange={handleChange} style={inputStyle} />
+                                <input
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "permanentAddress" ? "#ffffcc" : "white" }}
+                                    onFocus={() => setFocusedInput("permanentAddress")}
+                                    onBlur={() => setFocusedInput(null)} type="text" name="permanentAddress" value={formData.permanentAddress} onChange={handleChange} />
                             </div>
                             <div style={colStyle("16.66%")}>
                                 <label style={labelStyle}>Baby Weight</label>
                             </div>
                             <div style={colStyle("25%")}>
-                                <input type="text" name="babyWeight" value={formData.babyWeight} onChange={handleChange} style={inputStyle} />
+                                <input
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "babyWeight" ? "#ffffcc" : "white" }}
+                                    onFocus={() => setFocusedInput("babyWeight")}
+                                    onBlur={() => setFocusedInput(null)} type="text" name="babyWeight" value={formData.babyWeight} onChange={handleChange} />
                             </div>
                         </div>
 
@@ -344,7 +386,10 @@ const BirthCertificate = () => {
                                 <label style={labelStyle}>Mode of Delivery</label>
                             </div>
                             <div style={colStyle("25%")}>
-                                <input type="text" name="modeDelivery" value={formData.modeDelivery} onChange={handleChange} style={inputStyle} />
+                                <input
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "modeDelivery" ? "#ffffcc" : "white" }}
+                                    onFocus={() => setFocusedInput("modeDelivery")}
+                                    onBlur={() => setFocusedInput(null)} type="text" name="modeDelivery" value={formData.modeDelivery} onChange={handleChange} />
                             </div>
                         </div>
 
