@@ -366,7 +366,9 @@ const DueCollection = () => {
                                     value={formData.search}
                                     onChange={handleChange}
                                     placeholder="Search by particulars"
-                                    style={inputStyle}
+                                    onFocus={() => setFocusedInput("search")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "search" ? "#ffffcc" : "white" }}
                                 />
                             </div>
                         </div>
@@ -472,7 +474,9 @@ const DueCollection = () => {
                                     value={formData.cashAmt}
                                     onChange={handleChange}
                                     placeholder="0.00"
-                                    style={inputStyle}
+                                    onFocus={() => setFocusedInput("cashAmt")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "cashAmt" ? "#ffffcc" : "white" }}
                                 />
                             </div>
                             <div style={colStyle("16.66%")}>
@@ -501,7 +505,9 @@ const DueCollection = () => {
                                     value={formData.cardAmt}
                                     onChange={handleChange}
                                     placeholder="0.00"
-                                    style={inputStyle}
+                                    onFocus={() => setFocusedInput("cardAmt")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "cardAmt" ? "#ffffcc" : "white" }}
                                 />
                             </div>
                             <div style={colStyle("16.66%")}>
@@ -514,14 +520,23 @@ const DueCollection = () => {
                                     value={formData.cardNo}
                                     onChange={handleChange}
                                     placeholder="Card No"
-                                    style={inputStyle}
+                                    onFocus={() => setFocusedInput("cardNo")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "cardNo" ? "#ffffcc" : "white" }}
                                 />
                             </div>
                             <div style={colStyle("16.66%")}>
                                 <label style={labelStyle}>CardBank</label>
                             </div>
                             <div style={colStyle("16.66%")}>
-                                <select name="cardBank" value={formData.cardBank} onChange={handleChange} style={inputStyle}>
+                                <select
+                                    onFocus={() => setFocusedInput("cardBank")}
+                                    onBlur={() => setFocusedInput(null)}
+
+                                    style={{
+                                        ...inputStyle,
+                                        backgroundColor: focusedInput === "cardBank" ? "#ffffcc" : "white"
+                                    }} name="cardBank" value={formData.cardBank} onChange={handleChange} >
                                     <option value="">---Select---</option>
                                     <option value="31">AB BANK</option>
                                     <option value="51">BKASH</option>
@@ -544,7 +559,9 @@ const DueCollection = () => {
                                     value={formData.chequeAmt}
                                     onChange={handleChange}
                                     placeholder="0.00"
-                                    style={inputStyle}
+                                    onFocus={() => setFocusedInput("chequeAmt")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "chequeAmt" ? "#ffffcc" : "white" }}
                                 />
                             </div>
                             <div style={colStyle("16.66%")}>
@@ -557,14 +574,24 @@ const DueCollection = () => {
                                     value={formData.chequeNo}
                                     onChange={handleChange}
                                     placeholder="Cheque No"
-                                    style={inputStyle}
+                                    onFocus={() => setFocusedInput("chequeNo")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "chequeNo" ? "#ffffcc" : "white" }}
                                 />
                             </div>
                             <div style={colStyle("16.66%")}>
                                 <label style={labelStyle}>ChequeBank</label>
                             </div>
                             <div style={colStyle("16.66%")}>
-                                <select name="chequeBank" value={formData.chequeBank} onChange={handleChange} style={inputStyle}>
+
+                                <select
+                                    onFocus={() => setFocusedInput("chequeBank")}
+                                    onBlur={() => setFocusedInput(null)}
+
+                                    style={{
+                                        ...inputStyle,
+                                        backgroundColor: focusedInput === "chequeBank" ? "#ffffcc" : "white"
+                                    }} name="chequeBank" value={formData.chequeBank} onChange={handleChange}>
                                     <option value="">---Select---</option>
                                     <option value="31">AB BANK</option>
                                     <option value="51">BKASH</option>
@@ -579,13 +606,27 @@ const DueCollection = () => {
                                 <label style={labelStyle}>Cheque Date</label>
                             </div>
                             <div style={colStyle("16.66%")}>
-                                <input type="date" name="chequeDate" value={formData.chequeDate} onChange={handleChange} style={inputStyle} />
+                                <input
+                                    onFocus={() => setFocusedInput("chequeDate")}
+                                    onBlur={() => setFocusedInput(null)}
+
+                                    style={{
+                                        ...inputStyle,
+                                        backgroundColor: focusedInput === "chequeDate" ? "#ffffcc" : "white"
+                                    }} type="date" name="chequeDate" value={formData.chequeDate} onChange={handleChange} />
                             </div>
                             <div style={colStyle("16.66%")}>
                                 <label style={labelStyle}>Remarks</label>
                             </div>
                             <div style={colStyle("50%")}>
-                                <input type="text" name="remarks" value={formData.remarks} onChange={handleChange} style={inputStyle} />
+                                <input
+                                    onFocus={() => setFocusedInput("remarks")}
+                                    onBlur={() => setFocusedInput(null)}
+
+                                    style={{
+                                        ...inputStyle,
+                                        backgroundColor: focusedInput === "remarks" ? "#ffffcc" : "white"
+                                    }} type="text" name="remarks" value={formData.remarks} onChange={handleChange} />
                             </div>
                         </div>
                     </fieldset>
