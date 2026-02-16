@@ -10,6 +10,7 @@ import HomePage from './home/home_page';
 import PatientRelease from './patientRelease/patient_release';
 import DueCollection from './due/due_collection';
 import BirthCertificate from './birthCertificate/birth_certificate';
+import DischargeCertificate from './discharge/discharge_cer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/patient-release" element={<PatientRelease />} />
           <Route path="/due-collection" element={<DueCollection />} />
           <Route path="/birth-certificate" element={<BirthCertificate />} />
+          <Route path="/discharge-certificate" element={<DischargeCertificate />} />
         </Routes>
       </Router>
     </div>
