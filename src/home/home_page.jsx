@@ -58,6 +58,12 @@ const HomePage = () => {
                                 <Link to="/birth-certificate">Birth Certificate</Link>
                             </td>
                         </div>
+                        <div style={{ display: "flex", gap: "10px" }}>
+                            <td>
+                                <div>Death Certificate</div>
+                                <Link to="/death-certificate">Death Certificate</Link>
+                            </td>
+                        </div>
                     </tr>
                 </tbody>
             </table>
