@@ -8,6 +8,7 @@ import DoctorVisitEntry from './doctorVisit/doctor_visit';
 import BillModify from './billModify/bill_modify';
 import HomePage from './home/home_page';
 import PatientRelease from './patientRelease/patient_release';
+import DueCollection from './due/due_collection';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/doctor-visit-entry" element={<DoctorVisitEntry />} />
           <Route path="/bill-modify" element={<BillModify />} />
           <Route path="/patient-release" element={<PatientRelease />} />
+          <Route path="/due-collection" element={<DueCollection />} />
         </Routes>
       </Router>
     </div>
