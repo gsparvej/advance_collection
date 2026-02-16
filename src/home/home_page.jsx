@@ -49,6 +49,10 @@ const HomePage = () => {
                                 <div>Due Collection</div>
                                 <Link to="/due-collection">Due Collection</Link>
                             </td>
+                            <td>
+                                <div>Birth Certificate</div>
+                                <Link to="/birth-certificate">Birth Certificate</Link>
+                            </td>
                         </div>
                     </tr>
                 </tbody>
