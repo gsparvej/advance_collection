@@ -335,8 +335,10 @@ const BillModify = () => {
                                 name="productSearch"
                                 value={formData.productSearch}
                                 onChange={(e) => { handleChange(e); handleSearchProduct(); }}
+                                onFocus={() => setFocusedInput("productSearch")}
+                                onBlur={() => setFocusedInput(null)}
+                                style={{ ...inputStyle, backgroundColor: focusedInput === "productSearch" ? "#ffffcc" : "white" }}
                                 placeholder="Search by particulars"
-                                style={inputStyle}
                             />
                         </div>
                     </div>

@@ -248,7 +248,10 @@ const DischargeCertificate = () => {
                                 <label style={labelStyle}>Discharge Date</label>
                             </div>
                             <div style={colStyle("33.33%")}>
-                                <input type="date" value={formData.dischargeDate} onChange={(e) => setFormData({ ...formData, dischargeDate: e.target.value })} style={inputStyle} />
+                                <input type="date" value={formData.dischargeDate} onChange={(e) => setFormData({ ...formData, dischargeDate: e.target.value })}
+                                    onFocus={() => setFocusedInput("dischargeDate")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "dischargeDate" ? "#ffffcc" : "white" }} />
                             </div>
                         </div>
 
@@ -312,7 +315,10 @@ const DischargeCertificate = () => {
                                 <label style={labelStyle}>Weight</label>
                             </div>
                             <div style={colStyle("8.33%")}>
-                                <input type="text" name="weight" value={formData.weight} onChange={handleChange} style={inputStyle} />
+                                <input type="text" name="weight" value={formData.weight} onChange={handleChange}
+                                    onFocus={() => setFocusedInput("weight")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "weight" ? "#ffffcc" : "white" }} />
                             </div>
                         </div>
 
@@ -443,7 +449,11 @@ const DischargeCertificate = () => {
                                 <label style={{ ...labelStyle, textAlign: "left" }}>Medicine Pkg Code</label>
                             </div>
                             <div style={colStyle("20%")}>
-                                <input type="text" value={mediPackage.code} onChange={(e) => setMediPackage({ ...mediPackage, code: e.target.value })} style={inputStyle} />
+                                <input
+                                    onFocus={() => setFocusedInput("medicinePkgCode")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "medicinePkgCode" ? "#ffffcc" : "white" }}
+                                    type="text" value={mediPackage.code} onChange={(e) => setMediPackage({ ...mediPackage, code: e.target.value })} />
                             </div>
                             <div style={colStyle("40%")}>
                                 <button type="button" onClick={handleGetMedicinePackage} style={{ width: "100%", backgroundColor: "#5cb85c", color: "white", border: "none", borderRadius: "3px", padding: "3px", fontSize: "12px", cursor: "pointer" }}>Get Package</button>
@@ -461,9 +471,21 @@ const DischargeCertificate = () => {
                                         <th style={{ ...tableHeadStyle, width: "50px" }}>Action</th>
                                     </tr>
                                     <tr>
-                                        <td style={{ padding: "2px" }}><input type="text" value={mediInput.name} onChange={(e) => setMediInput({ ...mediInput, name: e.target.value })} style={inputStyle} placeholder="Name" /></td>
-                                        <td style={{ padding: "2px" }}><input type="text" value={mediInput.dose} onChange={(e) => setMediInput({ ...mediInput, dose: e.target.value })} style={inputStyle} placeholder="Dose" /></td>
-                                        <td style={{ padding: "2px" }}><input type="text" value={mediInput.days} onChange={(e) => setMediInput({ ...mediInput, days: e.target.value })} style={inputStyle} placeholder="Days" /></td>
+                                        <td style={{ padding: "2px" }}><input
+                                            onFocus={() => setFocusedInput("medicineName")}
+                                            onBlur={() => setFocusedInput(null)}
+                                            style={{ ...inputStyle, backgroundColor: focusedInput === "medicineName" ? "#ffffcc" : "white" }}
+                                            type="text" value={mediInput.name} onChange={(e) => setMediInput({ ...mediInput, name: e.target.value })} placeholder="Name" /></td>
+                                        <td style={{ padding: "2px" }}><input
+                                            onFocus={() => setFocusedInput("medicineDose")}
+                                            onBlur={() => setFocusedInput(null)}
+                                            style={{ ...inputStyle, backgroundColor: focusedInput === "medicineDose" ? "#ffffcc" : "white" }}
+                                            type="text" value={mediInput.dose} onChange={(e) => setMediInput({ ...mediInput, dose: e.target.value })} placeholder="Dose" /></td>
+                                        <td style={{ padding: "2px" }}><input
+                                            onFocus={() => setFocusedInput("medicineDays")}
+                                            onBlur={() => setFocusedInput(null)}
+                                            style={{ ...inputStyle, backgroundColor: focusedInput === "medicineDays" ? "#ffffcc" : "white" }}
+                                            type="text" value={mediInput.days} onChange={(e) => setMediInput({ ...mediInput, days: e.target.value })} placeholder="Days" /></td>
                                         <td style={{ padding: "2px" }}><button type="button" onClick={handleAddMedicine} style={{ width: "100%", backgroundColor: "#337ab7", color: "white", border: "none", borderRadius: "3px", padding: "3px", cursor: "pointer" }}>Add</button></td>
                                     </tr>
                                 </thead>
@@ -486,7 +508,11 @@ const DischargeCertificate = () => {
                                 <label style={{ ...labelStyle, textAlign: "left" }}>Advice Pkg Code</label>
                             </div>
                             <div style={colStyle("20%")}>
-                                <input type="text" value={advicePackage.code} onChange={(e) => setAdvicePackage({ ...advicePackage, code: e.target.value })} style={inputStyle} />
+                                <input
+                                    onFocus={() => setFocusedInput("advicePkgCode")}
+                                    onBlur={() => setFocusedInput(null)}
+                                    style={{ ...inputStyle, backgroundColor: focusedInput === "advicePkgCode" ? "#ffffcc" : "white" }}
+                                    type="text" value={advicePackage.code} onChange={(e) => setAdvicePackage({ ...advicePackage, code: e.target.value })} />
                             </div>
                             <div style={colStyle("40%")}>
                                 <button type="button" onClick={handleGetAdvicePackage} style={{ width: "100%", backgroundColor: "#5cb85c", color: "white", border: "none", borderRadius: "3px", padding: "3px", fontSize: "12px", cursor: "pointer" }}>Get Package</button>
@@ -502,7 +528,10 @@ const DischargeCertificate = () => {
                                         <th style={{ ...tableHeadStyle, width: "20%" }}>Action</th>
                                     </tr>
                                     <tr>
-                                        <td style={{ padding: "2px" }}><input type="text" value={adviceInput.description} onChange={(e) => setAdviceInput({ ...adviceInput, description: e.target.value })} style={inputStyle} placeholder="Advice Description" /></td>
+                                        <td style={{ padding: "2px" }}><input
+                                            onFocus={() => setFocusedInput("adviceDescription")}
+                                            onBlur={() => setFocusedInput(null)}
+                                            style={{ ...inputStyle, backgroundColor: focusedInput === "adviceDescription" ? "#ffffcc" : "white" }} type="text" value={adviceInput.description} onChange={(e) => setAdviceInput({ ...adviceInput, description: e.target.value })} placeholder="Advice Description" /></td>
                                         <td style={{ padding: "2px" }}><button type="button" onClick={handleAddAdvice} style={{ width: "100%", backgroundColor: "#337ab7", color: "white", border: "none", borderRadius: "3px", padding: "3px", cursor: "pointer" }}>Add</button></td>
                                     </tr>
                                 </thead>

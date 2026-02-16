@@ -411,7 +411,9 @@ const PatientRelease = () => {
                                         value={formData.search}
                                         onChange={(e) => { handleChange(e); handleSearchCodeList(); }}
                                         placeholder="Search by descriptions"
-                                        style={inputStyle}
+                                        onFocus={() => setFocusedInput("search")}
+                                        onBlur={() => setFocusedInput(null)}
+                                        style={{ ...inputStyle, backgroundColor: focusedInput === "search" ? "#ffffcc" : "white" }}
                                     />
                                 </div>
                             </div>
