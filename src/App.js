@@ -13,7 +13,7 @@ import BirthCertificate from './birthCertificate/birth_certificate';
 import DischargeCertificate from './discharge/discharge_cer';
 import DeathCertificate from './death/death_cer';
 import PatientRegistration from './patReg/pat_reg';
-
+import PatientAdmission from './patAdm/pat_adm';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
   return (
@@ -33,6 +33,7 @@ function App() {
           <Route path="/discharge-certificate" element={<DischargeCertificate />} />
           <Route path="/death-certificate" element={<DeathCertificate />} />
           <Route path="/patient-registration" element={<PatientRegistration />} />
+          <Route path="/patient-admission" element={<PatientAdmission />} />
 
         </Routes>
       </Router>
