@@ -10,6 +10,18 @@ const HomePage = () => {
                     <tr>
                         <div style={{ display: "flex", gap: "10px" }}>
                             <td>
+                                <div>Patient Registration</div>
+                                <Link to="/patient-registration">Patient Registration</Link>
+                            </td>
+                            <td>
+                                <div>Patient Admission</div>
+                                <Link to="/patient-admission">Patient Admission</Link>
+                            </td>
+                        </div>
+
+
+                        <div style={{ display: "flex", gap: "10px" }}>
+                            <td>
                                 <div>Advance Collection</div>
                                 <Link to="/advance-collection">Advance Collection</Link>
                             </td>

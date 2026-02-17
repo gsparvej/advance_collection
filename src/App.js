@@ -12,6 +12,8 @@ import DueCollection from './due/due_collection';
 import BirthCertificate from './birthCertificate/birth_certificate';
 import DischargeCertificate from './discharge/discharge_cer';
 import DeathCertificate from './death/death_cer';
+import PatientRegistration from './patReg/pat_reg';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
           <Route path="/birth-certificate" element={<BirthCertificate />} />
           <Route path="/discharge-certificate" element={<DischargeCertificate />} />
           <Route path="/death-certificate" element={<DeathCertificate />} />
+          <Route path="/patient-registration" element={<PatientRegistration />} />
+
         </Routes>
       </Router>
     </div>
